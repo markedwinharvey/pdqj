@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="./pdqj.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+	<script type='text/javascript' src='./pdqj.js'></script>
+	<title>PDQj</title>
+</head>
+<body>
+	<div id="pdq-title">
+		<h1>PDQj</h1>
+		<h1 id="pdqj2">PDQj</h1>
+	</div>
+	
+	<h2>PDQj is based on the retired Gamewright game called PDQ. </h2>
+	<p>This version shuffles the deck <em>and</em> 
+	flips the cards for you! </p>
+	
+	<div id="instructionsbuttonouter">
+		<div id="instructionsbuttoninner" onclick="toggleInstructions();">Instructions</div>
+	</div>
+	
+	<div id="instructions">
+		<p><strong>Basic Instructions</strong></p>
+		<p>PDQj is a word-based card game. For each round, 3 letter-cards are flipped simultaneously. </p>
+		<p>The object of the game is to make a word using the letters in order. That order may be <em>forwards or backwards.</em> </p>
+		<p>The first letter of the word must start with one of the outside letters. </p>
+		<p>For example, drawing the letters T-H-S, you might make the word <big>"<strong>th</strong>e<strong>s</strong>e"</big> or <big>"<strong>sh</strong>oo<strong>t</strong>"</big>, among many others. </p>
+		<p>The first person to call out a valid word wins that round.</p>
+		<p>If two people call out valid words simultaneously, the longer word wins.</p>  
+		<p>If no player can make a word, or no winner can be decided, press "No Answer" and the cards will be reshuffled into the deck.</p>
+		<p>Each 'X' card features an extra letter 'E' that you may use to begin a word.</p>
+		<p>To get a feel for the game, click through a Practice round (selected by default).</p>
+		<p>When you are ready to challenge your opponents, click "Keep Score". </p>
+		<p>This game allows up to four players to compete. There are 26 rounds.</p>
+		<p><strong>Recommendations</strong></p>
+		<p>Usually proper nouns are not acceptable.</p>
+		<p>Try playing with a minimum word length of five letters.</p> 
+		<p>One guess per-person per-round can prevent confusion.</p>
+		<p>These are just suggestions. Alter gameplay in any way you choose.</p> 
+		
+	</div>
+	
+	<div id="gameplayformdiv">
+	<form action="" id="gameplayform">										<!-- Practice or keep score?-->
+		<input type="radio" name="gameplay" value="practice" id="gameplay1" class="gameplay" onclick="gameselect('practice');">Practice<br>
+		<input type="radio" name="gameplay" value="scoring" id="gameplay2" class="gameplay" onclick="gameselect('score');">Keep Score
+		
+	</form>
+	</div>
+
+	<div id="countdowndivouter">
+	<div id="countdowndiv">
+		<form action="" id="countdownid">Countdown										<!-- To countdown or not to countdown-->
+			
+			<div id="cdboxouter">
+			<div class="cdbox"><input type="radio" id="countdown1" class="countdownclass" onclick="countingDown(true);">On</div>
+			<div class="cdbox"><input type="radio" id="countdown2" class="countdownclass" onclick="countingDown(false);">Off</div>
+			</div>
+		</form>
+	</div>
+	</div>
+	
+	<div id="restartdiv">
+		<div id="restartdivinner">
+			<!--<button type="button" class="restart" id="restart1" onclick="location.reload();">Restart</button>	-->
+			<button type="button" class="restart" id="restart1" onclick="reloadProgram2();">Restart</button>
+		</div>
+	
+		<div id="reloadmessage">
+		Game in progress. Would you like to switch?
+		</div>
+	
+		<button type="button" class="progressbutton" id="progressbutton1" onclick="reloadProgram(true);">Yes</button>		<!--switch game to other option-->
+		<button type="button" class="progressbutton" id="progressbutton2" onclick="reloadProgram(false);">No</button>		<!--do not switch game-->
+	</div>
+	
+	<div id="board">
+	
+		<div id="cardexterior">
+		<div id="cardinterior">
+			<h3 id="newE1" class="newE">(E)</h3>								<!--		if an X is drawn, add the parenthetical (E)-->
+			<h3 id="card1"></h3> 										<!-- draw card one -->		
+			
+		</div></div>
+		
+		<div id="cardexterior">
+		<div id="cardinterior">
+			<h3 id="newE2" class="newE">(E)</h3>										<!-- if an X is drawn, add the parenthetical (E)-->
+			<h3 id = "card2"></h3>										<!-- draw card two -->		
+			
+		</div></div>
+		
+		<div id="cardexterior">
+		<div id="cardinterior">
+			<h3 id="newE3" class="newE">(E)</h3>										<!-- if an X is drawn, add the parenthetical (E)-->
+			<h3 id = "card3"></h3>										<!-- draw card three -->			
+			
+		</div></div>
+		
+		<br>
+		
+		<div id="winnermessageouterbox">
+			<div id="winnermessage">winner message
+			</div>
+		</div>
+		
+		<div id="numberOfPlayersBox">														<!--GET NUMBER OF PLAYERS HERE-->
+			<p id="enterplayernumber">How many players? (1-4)</p>
+			<form action="javascript:void(0);">
+				<input type="text" id="numberplayerstext" name="numberOfPlayersBoxName" value=""/>
+				<div id="numberOfPlayersSubmit" onclick="getNumberOfPlayers(document.getElementById('numberplayerstext').value);">Submit
+				</div>
+				<!--<input type="submit" value="Submit" onclick="getNumberOfPlayers(this.form.numberOfPlayersBoxName.value);">-->
+			</form>		
+		</div>
+		
+		<script>
+			
+		</script>
+		
+		<div id="enternamesbox">
+			<p>Enter player names.</p>
+			<form id="frm1" action="javascript:void(0);">
+				<div id="playernamebox1" class="playernamebox">
+					Player 1: <input type="text" class="nameinput" name="name1" value="Player1" 
+						id="player1name" maxlength="12" onclick='selectAll("player1name");'><br> <!--onkeypress="nametruncator(1);" onkeydown="nametruncator(1);" onkeyup="nametruncator(1);"-->
+				</div>
+				<div id="playernamebox2" class="playernamebox">
+					Player 2: <input type="text" class="nameinput" name="name2" value="Player2" 
+						id="player2name" maxlength="12" onclick='selectAll("player2name");'><br>
+				</div>
+				<div id="playernamebox3" class="playernamebox">
+					Player 3: <input type="text" class="nameinput" name="name3" value="Player3" 
+						id="player3name" maxlength="12" onclick='selectAll("player3name");'><br>
+				</div>
+				<div id="playernamebox4" class="playernamebox">
+					Player 4: <input type="text" class="nameinput" name="name4" value="Player4" 
+						id="player4name" maxlength="12" onclick='selectAll("player4name");'><br>
+				</div>
+				<div id="enternamessubmit" onclick="getPlayerNames(document.getElementById('player1name').value,document.getElementById('player2name').value,document.getElementById('player3name').value,document.getElementById('player4name').value);">Submit
+				</div>
+			</form> 
+		</div>
+		
+		<script>
+			function selectAll(id){
+				document.getElementById(id).focus();
+				document.getElementById(id).select();
+			}
+		</script>
+	
+		<br>
+		<div id="button" onclick="deal();">								<!-- draw start/deal button -->
+			<h4 id="buttontext">Start</h4>
+		</div>
+	
+		<!--
+		<div onclick="cheat();">cheat button</div>
+		-->
+		
+		<br>
+		
+		<div id="allocatediv">
+			<p>Award points or click</p><br>
+		</div>
+		<div id="noanswer" onclick="noanswer();">						<!-- draw "no answer" button -->
+			<h5>No answer</h5>
+		</div>
+		
+		<div id="noanswertext">
+			<h6>Cards were returned. Press Deal when ready.</h6>		<!-- no-answer option disclaimer -->
+		</div>
+		<br>
+	</div>
+	
+	<div id ="playersboard">
+		<div id="allplayersbox">
+			<div class="playerbox" id="playerbox1">
+				<div id="namebox">Name:
+					<div class="name" id="name1">
+					</div>
+					<div id="scorebox">Score:
+						<div class="score" id="score1">
+						</div>
+						<div id="arrowsbox">
+							<div id="arrow-up1" class="arrow-up" onclick="scorechange(1,'up');">
+							</div>
+							<div id="arrow-down1" class="arrow-down" onclick="scorechange(1,'down');">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="playerbox" id="playerbox2">
+				<div id="namebox">Name:
+					<div class="name" id="name2"></div>
+				<div id="scorebox">Score:
+					<div class="score" id="score2"></div>
+				<div id="arrowsbox">
+					<div id="arrow-up2" class="arrow-up" onclick="scorechange(2,'up');"></div>
+					<div id="arrow-down2" class="arrow-down" onclick="scorechange(2,'down');"></div>
+				</div></div></div>
+			</div>
+			
+			<div class="playerbox" id="playerbox3">
+				<div id="namebox">Name:
+					<div class="name" id="name3"></div>
+				<div id="scorebox">Score:
+					<div class="score" id="score3"></div>
+				<div id="arrowsbox">
+					<div id="arrow-up3" class="arrow-up" onclick="scorechange(3,'up');"></div>
+					<div id="arrow-down3" class="arrow-down" onclick="scorechange(3,'down');"></div>
+				</div></div></div>
+			</div>
+			
+			<div class="playerbox" id="playerbox4">
+				<div id="namebox">Name:
+					<div class="name" id="name4"></div>
+				<div id="scorebox">Score:
+					<div class="score" id="score4"></div>
+				<div id="arrowsbox">
+					<div id="arrow-up4" class="arrow-up" onclick="scorechange(4,'up');"></div>
+					<div id="arrow-down4" class="arrow-down" onclick="scorechange(4,'down');"></div>
+				</div></div></div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="pointsawarded">Points awarded. Click Deal when ready!</div>	
+	<!--
+	<div id='footerlink' onclick='goHome();'>markedwinharvey.com</div>
+	-->
+	<style>
+		#footerlink{
+			color:rgb(0,0,90);
+			cursor:pointer;
+			font-family:helvetica;
+			font-size:11px;
+			text-align:center;
+			font-weight:bold;
+		}
+	</style>
+</body>
+</html>

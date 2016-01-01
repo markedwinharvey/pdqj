@@ -1,0 +1,578 @@
+::selection {
+    background-color:Transparent;
+    color:#000;
+}
+
+*{
+	font-family:Helvetica;
+}
+
+#pdq-title{
+	/*background-color:#FFFDCC;*/
+	background-color:#FFAD29;
+	
+	border-width:2px;
+	border-color:black;
+	border-style:solid;
+	border-radius:5px;
+	text-align:center;
+}
+
+h1{
+	font-weight:bold;
+	font-size:40px;
+	margin:10px;
+	display:inline-block;
+	color:white;
+	
+}
+
+
+
+#pdqj2{
+	color:black;
+	margin-left:-110px;
+
+}
+
+h2{
+	font-size:16px;
+}
+
+p{
+	font-size:14px;
+	color:#454545;
+	display:block;
+	margin:5px;
+	display:block;
+}
+
+#instructionsbuttonouter{
+	margin:15px;
+	margin-top:14px;
+	text-align:center;
+	display:block;
+	margin-bottom:2px;
+	cursor:pointer;
+}
+
+#instructionsbuttoninner{
+	font-weight:bold;
+	font-size:13px;
+	color:#435AB5;
+	text-align:center;
+	margin:2px;
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
+	display:inline-block;
+	padding:3px;
+	border-radius:5px;	
+	background-color:#5EE0E0;
+	border-radius:5px;	
+}
+
+#instructions{
+	display:none;
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	padding:3px;
+	margin-bottom:5px;
+}
+
+#gameplayformdiv{
+	display:inline-block;
+	
+	border-width:1px;
+	border-style:dashed;
+	border-color:black;
+	border-radius:5px;
+	padding-right:5px;
+	padding-left:3px;
+	padding-top:4px;
+	padding-bottom:4px;
+}
+	
+#gameplayform{
+	font-size:13px;
+}
+
+.gameplay{
+	font-size:15px;
+	display:inline-block;
+}
+
+#countdowndivouter{
+	display:inline-block;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	border-style:dashed;
+	padding-bottom:3px;
+}
+
+#countdowndiv{
+	padding:1px;
+	text-align:center;
+	width:90px;
+}
+
+#countdownid{
+	font-size:12px;
+	display:inline-block;
+	text-align:center;
+	margin-top:7px;
+}
+
+#cdboxouter{
+	margin-top:1px;
+	margin-left:-4px;
+	display:inline-block;
+}
+
+.cdbox{
+	display:inline-block;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.countdownclass{
+	display:inline-block;
+	font-size:11px;
+}
+
+#restartdiv{
+	display:inline-block;
+	margin-left:3px;
+	
+	padding-top:12px;
+	vertical-align:top;
+}
+
+#restartdivinner{
+	display:inline-block;
+}
+
+.restart{	
+	display:none;	
+	cursor:pointer;	
+}
+
+#restart1{
+	display:none;	
+	
+}
+
+#reloadmessage{
+	display:none;
+	font-size:15px;
+	margin-left:30px;
+	margin-right:10px;
+	
+}
+
+.progressbutton{
+	display:none;
+	margin-top:-2px;
+	vertical-align:top;
+	cursor:pointer;
+}
+
+
+
+#board{
+	margin-top:5px;
+	height:400px;
+	display:block;
+	background-color:#FFCF69;
+	padding:10px;
+	text-align:center;
+	border-color:black;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	
+}
+	
+#cardexterior{
+	margin:10px;
+	border-color:black;
+	border-width:1px;
+	border-style:solid;
+	border-radius:5px;
+	text-align:center;
+	display:inline-block;
+	padding:1px;
+	background-color:#FFB5B5;
+	
+	
+}
+
+#cardinterior{
+	height:210px;
+	width:150px;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	border-style:solid;	
+	text-align:center;
+	padding:5px;
+	background-color:white;
+	margin:0px;
+	
+	
+}
+
+h3{
+	
+	margin:2px;
+	padding:4px;
+	display:inline-block;
+	font-size:150px;
+	font-family:Times;
+	height:1px;
+	
+}
+
+.newE{
+	display:none;
+	font-size:30px;
+	width:30px;
+	height:25px;
+	
+	vertical-align: top;
+	margin-top:40px;
+}
+
+#EX{
+	position:relative;
+	display:none;
+	margin-top:0px;
+	width:135px;
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+	margin-left:0px;
+}
+
+#E{
+	margin-top:25px;
+	padding:0px;
+	font-size:35px;	
+	float:left;
+	width:30px;
+	/*
+	border-color:black;
+	border-style:solid;
+	border-width:1px;
+	display:none;
+	display:inline-block;
+	*/
+	position:relative;
+	display:none;
+}
+
+#X{
+	
+	font-size:135px;	
+	float:left;
+	position:relative;
+	display:none;
+}
+
+#winnermessageouterbox{
+	background-color:#5EE0E0;	
+	text-align:center;
+	display:none;
+	padding:auto;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
+	border-radius:5px;
+	margin-top:2px;
+	margin-bottom:4px;
+}
+
+#winnermessage{
+	display:inline-block;	
+	font-size:40px;
+	font-weight:bold;
+	border-color:black;
+	border-width:2px;
+	border-style:solid;
+	margin:5px;
+	border-radius:5px;
+	background-color:#FFFDCC;
+	text-align:center;
+	padding:5px;
+}
+
+#numberOfPlayersBox{
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+	border-radius:5px;
+	display:none;
+	padding:15px;
+	margin:5px;
+	width:300px;
+	text-align:center;
+	background-color:#FFCD42;
+}
+
+#enterplayernumber{
+	color:#454545;
+	margin-bottom:15px;
+}
+
+#numberplayerstext{
+	display:inline-block;
+	padding-left:5px;
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	font-size:20px;
+	width:20px;
+	margin-right:5px;
+}
+
+#numberOfPlayersSubmit{
+	font-size:13px;
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+	border-radius:5px;
+	display:inline-block;
+	padding:5px;
+	background-color:#5EE0E0;
+	margin-left:10px;
+	vertical-align:top;
+}
+
+#enternamesbox{
+	border-style:solid;
+	border-color:black;
+	border-width:1px;
+	border-radius:5px;
+	display:none;
+	margin:5px;
+	padding:3px;
+	background-color:#FFCD42;
+}
+
+#frm1{
+	margin-left:10px;
+	font-size:12px;
+}
+
+.playernamebox{
+	text-align:left;
+	display:none;
+}
+
+.nameinput{
+	margin-left:5px;
+}
+
+#enternamessubmit{
+	border-color:black;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	display:inline-block;
+	background-color:#5EE0E0;	
+	text-align:center;
+	padding:3px;
+	margin:3px;
+}
+
+#button{
+	border-color:black;
+	border-width:3px;
+	border-radius:5px;
+	border-style:solid;
+	display:inline-block;
+	background-color:#5EE0E0;	
+	text-align:center;
+	cursor:pointer;
+}
+
+h4{
+	font-size:50px;
+	padding:2px;
+	margin:2px;
+}
+	
+#noanswer{
+	border-color:black;
+	border-width:3px;
+	border-radius:5px;
+	border-style:solid;
+	display:none;
+	background-color:#5EE0E0;	
+	text-align:center;
+	}
+
+#allocatediv{
+	display:none;
+	text-align:center;
+}
+
+h5{
+	font-size:20px;
+	padding:2px;
+	margin:2px;
+	}
+
+#noanswertext{
+	display:none;
+	text-align:center;
+	font-size:20px;
+}
+
+h6{
+	font-size:15px;
+	padding:3px;
+	margin:4px;
+}
+
+#playersboard{
+	
+	background-color:#FFE48A;
+	padding:6px;
+	text-align:left;
+	border-color:black;
+	border-width:2px;
+	border-radius:5px;
+	border-style:solid;
+	margin-top:3px;
+	display:none;
+}
+
+#allplayersbox{
+	display:inline-block;
+	padding:0px;
+}
+
+.playerbox{
+	display:none;
+	height:20px;
+	margin-bottom:8px;
+}
+
+#namebox{
+	display:inline-block;
+}
+
+.name{
+	display:inline-block;
+	width:100px;
+	margin-left:5px;
+}
+
+#scorebox{
+	display:inline-block;
+	margin-left:80px;
+}
+
+.score{
+	display:inline-block;
+	width:20px;
+}
+
+#arrowsbox{
+	display:inline-block;
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 12px solid green;
+	display:none;
+
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 12px solid #f00;
+	display:none;
+}
+
+#pointsawarded{
+	display:inline-block;
+	color:white;
+	margin-top:2px;
+}
+
+#footer{
+	font-size:10px;
+	float:right;
+	display:inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#playername1{
+	display:inline-block;
+}
+
+#playerscore{
+	display:inline-block;
+}
+
+
+
+
+
+
